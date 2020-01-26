@@ -7,7 +7,6 @@
     <PackageId>Fingerprintjs2.AspNetCore</PackageId>
     <PackageProjectUrl>https://github.com/okolobaxa/Fingerprintjs2.AspNetCore/</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIcon>icon.png</PackageIcon>
     <PackageTags>Fingerprintjs2;Browser Fingerprinting;JavaScript identification;fraud detection;aspnetcore;</PackageTags>
     <Version>0.9.0</Version>
   </PropertyGroup>

@@ -1,0 +1,27 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+
+<input id="<#= Model.Id #>" name="<#= Model.Id #>" type="hidden" value="" />
+<script src="<#= Model.LibraryUrl #>"></script>
+<script>
+        if (window.requestIdleCallback) {
+            requestIdleCallback(function () {
+                GetFingerprint();
+            })
+        } else {
+            setTimeout(function () {
+                GetFingerprint();
+            }, 500)
+        }
+        
+        function GetFingerprint() {
+            if (typeof Fingerprint2 !== 'undefined') {
+                Fingerprint2.get(function (components) {
+                    var values = components.map(function (component) { return component.value });
+                    var hash = Fingerprint2.x64hash128(values.join(''), 31);
+                    
+                    document.getElementById("<#= Model.Id #>").value = hash;
+                });
+            }
+        }
+</script>

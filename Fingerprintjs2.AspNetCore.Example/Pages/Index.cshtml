@@ -1,0 +1,17 @@
+﻿@page
+@using Fingerprintjs2.AspNetCore
+@model IndexModel
+
+
+<form method="post">
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <div class="form-group">
+            @Html.Fingerprint("https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.1.0/fingerprint2.min.js")
+        </div>
+        <button type="submit" class="btn btn-primary">Generate</button>
+    </fieldset>
+</form>
+
+
+<p>Your browser fingerprint is @Model.Fingerprint</p>

@@ -1,8 +1,8 @@
 ﻿<#@ template language="C#" #>
 <#@ assembly name="System.Core" #>
 
-<input id="<#= Model.Id #>" name="<#= Model.Id #>" type="hidden" value="" />
-<script src="<#= Model.LibraryUrl #>"></script>
+<input id="f-fingerprint" name="f-fingerprint" type="hidden" value="" />
+
 <script>
         if (window.requestIdleCallback) {
             requestIdleCallback(function () {
@@ -20,7 +20,7 @@
                     var values = components.map(function (component) { return component.value });
                     var hash = Fingerprint2.x64hash128(values.join(''), 31);
                     
-                    document.getElementById("<#= Model.Id #>").value = hash;
+                    document.getElementById("f-fingerprint").value = hash;
                 });
             }
         }

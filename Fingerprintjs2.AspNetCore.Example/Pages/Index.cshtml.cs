@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Fingerprintjs2.AspNetCore;
 
 namespace Fingerprintjs2.AspNetCore.Example.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly IRecaptchaService _recaptcha;
+        private readonly IFingerprintProvider _fingerprintProvider;
 
-        public IndexModel(IRecaptchaService recaptcha)
+        public IndexModel(IFingerprintProvider fingerprintProvider)
         {
-            _recaptcha = recaptcha;
+            _fingerprintProvider = fingerprintProvider;
         }
 
         public string Fingerprint { get; set; }
@@ -20,7 +19,7 @@ namespace Fingerprintjs2.AspNetCore.Example.Pages
 
         public void OnPost()
         {
-            Fingerprint = _recaptcha.Validate(Request);
+            Fingerprint = _fingerprintProvider.Get(Request);
         }
     }
 }

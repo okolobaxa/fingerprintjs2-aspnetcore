@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Fingerprintjs2.AspNetCore;
 
 namespace Fingerprintjs2.AspNetCore.Example
 {
@@ -21,7 +20,7 @@ namespace Fingerprintjs2.AspNetCore.Example
         {
             services.AddRazorPages();
 
-            services.AddTransient<IRecaptchaService, RecaptchaService>();
+            services.AddTransient<IFingerprintProvider, FingerprintProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

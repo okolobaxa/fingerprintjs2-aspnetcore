@@ -2,8 +2,8 @@
 
 namespace Fingerprintjs2.AspNetCore
 {
-    public interface IRecaptchaService
+    public interface IFingerprintProvider
     {
-        string Validate(HttpRequest request);
+        string Get(HttpRequest request);
     }
 }

@@ -26,28 +26,10 @@ namespace Fingerprintjs2.AspNetCore.Templates
         public virtual string TransformText()
         {
             this.Write("\n");
-            this.Write("\n\n<input id=\"");
-            
-            #line 1 "D:\Dropbox\Projects\Fingerprintjs2.AspNetCore\Fingerprintjs2.AspNetCore\Templates\Template.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Id));
-            
-            #line default
-            #line hidden
-            this.Write("\" name=\"");
-            
-            #line 1 "D:\Dropbox\Projects\Fingerprintjs2.AspNetCore\Fingerprintjs2.AspNetCore\Templates\Template.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Id));
-            
-            #line default
-            #line hidden
-            this.Write("\" type=\"hidden\" value=\"\" />\n<script src=\"");
-            
-            #line 1 "D:\Dropbox\Projects\Fingerprintjs2.AspNetCore\Fingerprintjs2.AspNetCore\Templates\Template.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Model.LibraryUrl));
-            
-            #line default
-            #line hidden
-            this.Write(@"""></script>
+            this.Write(@"
+
+<input id=""f-fingerprint"" name=""f-fingerprint"" type=""hidden"" value="""" />
+
 <script>
         if (window.requestIdleCallback) {
             requestIdleCallback(function () {
@@ -65,14 +47,11 @@ namespace Fingerprintjs2.AspNetCore.Templates
                     var values = components.map(function (component) { return component.value });
                     var hash = Fingerprint2.x64hash128(values.join(''), 31);
                     
-                    document.getElementById(""");
-            
-            #line 1 "D:\Dropbox\Projects\Fingerprintjs2.AspNetCore\Fingerprintjs2.AspNetCore\Templates\Template.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Id));
-            
-            #line default
-            #line hidden
-            this.Write("\").value = hash;\n                });\n            }\n        }\n</script>");
+                    document.getElementById(""f-fingerprint"").value = hash;
+                });
+            }
+        }
+</script>");
             return this.GenerationEnvironment.ToString();
         }
     }

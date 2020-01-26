@@ -2,17 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.9.0</Version>
-    <Authors>Anton Kheystver</Authors>
-    <PackageLicenseUrl>https://github.com/okolobaxa/Fingerprintjs2.AspNetCore/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/okolobaxa/Fingerprintjs2.AspNetCore/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/okolobaxa/Fingerprintjs2.AspNetCore/</RepositoryUrl>
-    <RepositoryType>Github</RepositoryType>
+    <Authors>Anton Kheistver</Authors>
     <Description>Fingerprintjs2 HtmlHelper for ASP.NET Core 2 and 3</Description>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyName>Fingerprintjs2.AspNetCore</AssemblyName>
+    <PackageId>Fingerprintjs2.AspNetCore</PackageId>
+    <PackageProjectUrl>https://github.com/okolobaxa/Fingerprintjs2.AspNetCore/</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>Fingerprintjs2;Browser Fingerprinting;JavaScript identification;fraud detection;aspnetcore;</PackageTags>
+    <Version>0.9.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
